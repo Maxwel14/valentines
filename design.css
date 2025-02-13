@@ -1,23 +1,32 @@
+/* General Styling */
 body {
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #fb92ff;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
 }
 
+/* Container: Centers Everything */
 .container {
     text-align: center;
+    max-width: 90%; /* Adjust for smaller screens */
 }
 
+/* Box: Responsive Card */
 .box {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px; /* Ensures a good size on large screens */
 }
 
+/* Buttons: Style & Animation */
 button {
     padding: 10px 20px;
     border: none;
@@ -27,9 +36,11 @@ button {
     border-radius: 5px;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Makes buttons responsive */
+    max-width: 200px; /* Limits button size */
 }
 
-/* Yes and No Button (Same Style) */
+/* Yes and No Buttons */
 .yes-button, .no-button {
     background-color: #b37dff;
     color: rgb(69, 69, 69);
@@ -37,19 +48,56 @@ button {
 
 .yes-button:hover, .no-button:hover {
     background-color: #9163fc;
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .yes-button:active, .no-button:active {
     transform: scale(0.95);
 }
+
+/* Responsive Image */
 #responseImage {
-    width: 100px; /* Adjust image size */
-    height: 250px; /* Maintain aspect ratio */
-    border-radius: 10px; /* Add rounded corners */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow */
-    margin-top: 10px; /* Add spacing */
-    display: none; /* Hide initially */
-    margin-left: 230px;
+    width: 80%; /* Makes it flexible */
+    max-width: 250px; /* Prevents it from getting too big */
+    height: auto; /* Keeps aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    display: none; /* Initially hidden */
+}
+
+/* 🔥 RESPONSIVE DESIGN 🔥 */
+@media screen and (max-width: 768px) {
+    .box {
+        max-width: 90%; /* Makes it fit on smaller screens */
+    }
+
+    button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    #responseImage {
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .box {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px; /* Smaller text for mobile */
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    #responseImage {
+        max-width: 150px;
+    }
 }
