@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>Valentine's Date</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Hello Love! Can you be my Valentine's Date?</h1>
+            
+            <form id="valentineForm">
+                <button type="button" onclick="showMessage('yes')" class="yes-button">Yes</button>
+                <button type="button" onclick="showMessage('no')" class="no-button">No</button>
+            </form>
+
+            <p id="message"></p>
+            <img id="responseImage" src="" alt="" style="display:none; width: 200px; margin-top: 10px;">
+        </div>
+    </div>
+
+    <script>
+        function showMessage(choice) {
+            let message = document.getElementById("message");
+            let image = document.getElementById("responseImage");
+
+            if (choice === "yes") {
+                message.innerHTML = "YEEEEEEEEEEEEEYYYYYYY!";
+                image.src = "yes.jpg"; 
+            } else if (choice === "no") {
+                message.innerHTML = "NANGYAN!";
+                image.src = "no.jpg"; // Change this to your "sad" image
+            }
+
+            image.style.display = "block"; // Show the image
+        }
+    </script>
+</body>
+</html>
